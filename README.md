@@ -19,7 +19,3 @@ Veröffentlichung auf Steam
 Optinal: Multiplayer-Modus
 Optional: einfache Website mit Datenbank für Highscore-Rankings
 
-## Motivation
-
-Interesse an der Entwicklung eines eigenen Spieles.
-Interesse an den Technologien der Spieleindustrie.
