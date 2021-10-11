@@ -19,3 +19,8 @@ Veröffentlichung auf Steam
 Optinal: Multiplayer-Modus
 Optional: einfache Website mit Datenbank für Highscore-Rankings
 
+## Programmieranteil
+
+Client: läuft auf Windows und muss installiert werden, weil Veröffentlichung auf Steam geplant ist.
+Entwickelt wird der Client mit Unity und C#.
+Optional: für Multiplayermodus und Highscore Rankings Website Java EE und MySql.
