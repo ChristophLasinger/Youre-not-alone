@@ -1,7 +1,7 @@
 # youre-not-alone
 
 ## Projekthintergrund / Motivation für das Projekt
-Interesse an der Entwicklung eines eigenen Spieles.
+Interesse an der Entwicklung eines eigenen Spieles.\
 Interesse an den Technologien der Spieleindustrie.
 
 --
