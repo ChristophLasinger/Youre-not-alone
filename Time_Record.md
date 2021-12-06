@@ -1,0 +1,7 @@
+# Time Record
+
+| Date| Description | Workhours |	Name |
+| ----- |:---------:| ---------:| -------|
+| 04.012.2021| Basicmovement, Cameracontrole | 3 | Sarvan Amel|
+| 05.12.2021| Initialcontroles, Keybindings|   3 | Kern Philip
+| 05.12.2021| Pickup Items|    3 | Lasinger Christoph
