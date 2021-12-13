@@ -12,8 +12,8 @@ URL: http://amelsarvan.ddns.net/
 
 ## Team
 
-| Name | Phone number | Email
-| ----- | ------- | ------- |
-| Lasinger Christoph | 0650 4423259 | lasingerchristoph22@gmail.com
-| Kern Philip | 0677 62119101 | philip_kern@outlook.de | 
-| Sarvan Amel | 0664 3412810 | amelsarvan@gmail.com
+| Name | Phone number | Email | Role |
+| ------ | ------ | ------ | ------ |
+| Lasinger Christoph | 0650 4423259 | lasingerchristoph22@gmail.com | project manager
+| Kern Philip | 0677 62119101 | philip_kern@outlook.de | project member
+| Sarvan Amel | 0664 3412810 | amelsarvan@gmail.com | project member
