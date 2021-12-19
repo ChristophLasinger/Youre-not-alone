@@ -8,7 +8,7 @@ Our motivation for this project comes from our general interest in video games a
 ## Website
 
 Additionally, we have created a website where every player can publish their own highscore and the top highscores will be displayed. <br>
-URL: http://amelsarvan.ddns.net/
+URL: http://christophlasinger.hopto.org/
 
 ## Team
 
