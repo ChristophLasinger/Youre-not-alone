@@ -12,3 +12,4 @@
 | 15.12.2021 | Tried to create Hugo landing page on oracle vm | 2 | Lasinger Christoph
 | 19.12.2021 | Making landing page accessible | 2 | Kern Philip
 | 19.12.2021 | Created Hugo landing page on oracle vm | 2 | Lasinger Christoph
+| 19.12.2021 | Tried to edit conent on landing page | 2 | Sarvan Amel
