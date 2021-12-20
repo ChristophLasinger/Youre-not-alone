@@ -1,6 +1,6 @@
-<h1 align="center"> youre not alone </h1>
+<h1 align="center"> You Are Not Alone </h1>
 
-youre not alone is puzzle game with platformer elements that aims to provide an interesting story and a scary atmosphere. <br>
+You Are Not Alone is puzzle game with platformer elements that aims to provide an interesting story and a scary atmosphere. <br>
 When we are done with this project we plan on realising it on Steam under the same name. 
 
 Our motivation for this project comes from our general interest in video games and the technologies behind creating them.
