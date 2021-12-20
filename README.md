@@ -12,8 +12,8 @@ URL: http://christophlasinger.hopto.org/
 
 ## Team
 
-| Name | Phone number | Email | Role |
-| ------ | ------ | ------ | ------ |
-| Lasinger Christoph | 0650 4423259 | lasingerchristoph22@gmail.com | project manager
-| Kern Philip | 0677 62119101 | philip_kern@outlook.de | project member
-| Sarvan Amel | 0664 3412810 | amelsarvan@gmail.com | project member
+| Name | Email | Role |
+| ------ | ------ | ------ |
+| Lasinger Christoph | lasingerchristoph22@gmail.com | project manager
+| Kern Philip | philip_kern@outlook.de | project member
+| Sarvan Amel | amelsarvan@gmail.com | project member
