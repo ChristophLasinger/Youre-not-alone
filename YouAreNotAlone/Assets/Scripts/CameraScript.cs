@@ -16,7 +16,7 @@ public class CameraScript : MonoBehaviour
         {
             grabbedObj = hit.transform.gameObject;
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             grabbedObj = null;

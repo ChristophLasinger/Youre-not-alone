@@ -6,7 +6,7 @@ public class PLayerMovement : MonoBehaviour
 {
 
     public CharacterController controller;
-
+    
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -17,7 +17,17 @@ public class PLayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-
+    
+    /*Currently not working
+    private void Start()
+    {
+        Vector3 position = controller.transform.position;
+        if(SaveManager.instance.hasLoaded)
+        {
+            position = SaveManager.instance.activeSave.playerPosition;
+            controller.transform.position = position;
+        }
+    }*/ 
     // Update is called once per frame
     void Update()
     {
