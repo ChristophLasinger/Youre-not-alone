@@ -6,13 +6,13 @@ using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
-    public SavaData activeSave;
+    public SaveData activeSave;
     public static SaveManager instance;
     public bool hasLoaded;
     private void Awake()
     {
         instance = this;
-        Load();
+        //Load();
     }
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,9 @@ public class SaveManager : MonoBehaviour
     public void Save()
     {
         string dataPath = Application.persistentDataPath;
-        var serializer = new XmlSerializer(typeof(SavaData));
+        var serializer = new XmlSerializer(typeof(SaveData));
+        activeSave.playerPosition = transform.position;
+        activeSave.saveName = "Test";
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save",FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
@@ -47,13 +49,17 @@ public class SaveManager : MonoBehaviour
     }
     public void Load()
     {
+        Debug.Log("Load");
         string dataPath = Application.persistentDataPath;
         if (File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
-            var serializer = new XmlSerializer(typeof(SavaData));
-            var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Create);
-            activeSave = serializer.Deserialize(stream) as SavaData;
+            Debug.Log("LoadTest");
+            Debug.Log(dataPath);
+            var serializer = new XmlSerializer(typeof(SaveData));
+            var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Open);
+            activeSave = serializer.Deserialize(stream) as SaveData;
             stream.Close();
+            transform.position = activeSave.playerPosition;
             Debug.Log("Loaded");
             hasLoaded = true;
         }
@@ -67,7 +73,7 @@ public class SaveManager : MonoBehaviour
         }
     }
     [System.Serializable]
-    public class SavaData
+    public class SaveData
     {
         public string saveName;
         public Vector3 playerPosition;

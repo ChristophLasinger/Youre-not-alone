@@ -18,7 +18,6 @@ public class PLayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     
-    /*Currently not working
     private void Start()
     {
         Vector3 position = controller.transform.position;
@@ -27,7 +26,7 @@ public class PLayerMovement : MonoBehaviour
             position = SaveManager.instance.activeSave.playerPosition;
             controller.transform.position = position;
         }
-    }*/ 
+    }
     // Update is called once per frame
     void Update()
     {
