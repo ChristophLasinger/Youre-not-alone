@@ -41,7 +41,7 @@ public class SaveManager : MonoBehaviour
         string dataPath = Application.persistentDataPath;
         var serializer = new XmlSerializer(typeof(SaveData));
         activeSave.playerPosition = transform.position;
-        activeSave.saveName = "Test";
+        activeSave.saveName = "PlayerSave";
         var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save",FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
@@ -49,12 +49,9 @@ public class SaveManager : MonoBehaviour
     }
     public void Load()
     {
-        Debug.Log("Load");
         string dataPath = Application.persistentDataPath;
         if (File.Exists(dataPath + "/" + activeSave.saveName + ".save"))
         {
-            Debug.Log("LoadTest");
-            Debug.Log(dataPath);
             var serializer = new XmlSerializer(typeof(SaveData));
             var stream = new FileStream(dataPath + "/" + activeSave.saveName + ".save", FileMode.Open);
             activeSave = serializer.Deserialize(stream) as SaveData;
