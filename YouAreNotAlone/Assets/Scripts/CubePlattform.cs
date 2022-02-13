@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CubePlattform : MonoBehaviour
 {
-
     private GameObject bigCube;
     private GameObject mediumCube;
     private GameObject smallCube;
@@ -13,8 +12,6 @@ public class CubePlattform : MonoBehaviour
     private Vector3 plattformPosition;
     private bool cubePuzzleSolved = false;
     public GameObject keyPrefab;
-
-
 
     // Start is called before the first frame update
     void Start()
