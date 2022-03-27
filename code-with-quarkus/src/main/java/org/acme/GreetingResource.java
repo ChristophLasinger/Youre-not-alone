@@ -17,7 +17,7 @@ public class GreetingResource {
     PlayerDAO playerDAO;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Player> hello() {
         return playerDAO.getAll();
     }
