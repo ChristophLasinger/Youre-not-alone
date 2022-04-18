@@ -2,6 +2,10 @@ using RiptideNetworking;
 using RiptideNetworking.Utils;
 using UnityEngine;
 
+public enum ServerToClientId : ushort
+{
+    playerSpawned = 1,
+}
 public enum ClientToServerId : ushort
 {
     name = 1,
@@ -36,6 +40,8 @@ public class NetworkManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 120;
+
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
         Server = new Server();
