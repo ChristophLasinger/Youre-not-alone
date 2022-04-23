@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 3011912627771270323}
   - component: {fileID: 5506139396546665539}
   - component: {fileID: -8714730744183124569}
+  - component: {fileID: 2315914663155085705}
   m_Layer: 0
   m_Name: LocalPlayer
   m_TagString: Untagged
@@ -289,3 +290,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTransform: {fileID: 3689467969375252473}
+--- !u!114 &2315914663155085705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895349859031950314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b543168a7a5a14498d74fc110098ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 3689467969375252473}
+  grabPosition: {fileID: 0}

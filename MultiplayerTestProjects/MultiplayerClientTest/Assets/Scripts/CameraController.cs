@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
         horizontalRotation = player.transform.eulerAngles.y;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             ToggleCursorMode();
@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
             Look();
 
         Debug.DrawRay(transform.position, transform.forward * 2f, Color.green);
-    }
+    } */
 
     private void Look()
     {
