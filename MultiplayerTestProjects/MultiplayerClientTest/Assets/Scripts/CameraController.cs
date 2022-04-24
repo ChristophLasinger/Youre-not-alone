@@ -26,13 +26,13 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape))
-            ToggleCursorMode(); */
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //    ToggleCursorMode();
 
         if (Cursor.lockState == CursorLockMode.Locked)
             Look();
 
-        Debug.DrawRay(transform.position, transform.forward * 2f, Color.green); 
+        Debug.DrawRay(transform.position, transform.forward * 2f, Color.green);
     }
 
     private void Look()
