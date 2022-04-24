@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         if (!IsLocal)
         {
             camTransform.forward = forward;
-            animationManager.AnimateBasedOnSpeed();
+            //animationManager.AnimateBasedOnSpeed();
         }
     }
 
