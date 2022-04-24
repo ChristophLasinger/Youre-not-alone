@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyplateTriggerEvent : MonoBehaviour
+public class Keyplate1 : MonoBehaviour
 {
-    [SerializeField]
-    GameObject door;
+    //[SerializeField]
+    //GameObject door;
+    //PuzzleDoor puzzleDoor;
 
-    bool isOpen = false;
+    public bool IsPressed = false;
+    public bool triggered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,21 +20,17 @@ public class KeyplateTriggerEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (triggered)
+            IsPressed = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isOpen)
-        {
-            isOpen = true;
-            door.transform.position += new Vector3(0, 20, 0);
-        }
+        triggered = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        door.transform.position -= new Vector3(0, 20, 0);
-        isOpen = false;
+        triggered=true;
     }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - MainMenu
+  - Button1
+  - Button2
+  - Button3
   layers:
   - Default
   - TransparentFX
