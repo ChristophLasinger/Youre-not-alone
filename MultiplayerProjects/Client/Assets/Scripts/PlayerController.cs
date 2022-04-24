@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
             inputs[5] = true;
+
     }
 
     private void FixedUpdate()

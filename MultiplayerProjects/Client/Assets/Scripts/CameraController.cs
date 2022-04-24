@@ -45,6 +45,11 @@ public class CameraController : MonoBehaviour
 
         verticalRotation = Mathf.Clamp(verticalRotation, -clampAngle, clampAngle);
 
+        //testing
+        //player.transform.rotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+        //transform.localRotation = Quaternion.Euler(0f, horizontalRotation, 0f);
+
+        //original
         transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         player.transform.rotation = Quaternion.Euler(0f, horizontalRotation, 0f);
     }
