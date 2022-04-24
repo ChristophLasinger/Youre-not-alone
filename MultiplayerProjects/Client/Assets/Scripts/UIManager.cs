@@ -1,5 +1,6 @@
 using RiptideNetworking;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
         connectUI.SetActive(false);
 
         NetworkManager.Singleton.Connect();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void BackToMain()
@@ -48,5 +50,9 @@ public class UIManager : MonoBehaviour
         Message message = Message.Create(MessageSendMode.reliable, ClientToServerId.name);
         message.AddString(usernameField.text);
         NetworkManager.Singleton.Client.Send(message);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

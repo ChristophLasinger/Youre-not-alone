@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpHeight;
 
+    public new Transform camera;
+    public Transform grabPosition;
+
+    private RaycastHit hit;
+    private GameObject grabbedObj;
+
     private float gravityAcceleration;
     private float moveSpeed;
     private float jumpSpeed;
