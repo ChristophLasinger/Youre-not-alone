@@ -1,3 +1,3 @@
-#Server
+# Server
 
-### This server acts temporarily as the host server for our game, where the players connect to with their clients. 
+### This server acts temporarily as the host server for our game, to which players can connect to with their clients. 

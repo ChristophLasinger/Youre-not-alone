@@ -1,3 +1,3 @@
-#Client
+# Client
 
-###The game client, which players will see, when they start the game.
+### The game client that players will see when they start the game.
