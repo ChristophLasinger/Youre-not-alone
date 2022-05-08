@@ -1,0 +1,35 @@
+@startuml
+title 
+Technickplan 
+end title
+
+header
+Datum: 02.05.2022
+Diagrammart: Sequenzdiagramm
+Projectname: You are not alone
+Beteiligte: <u>Lasinger Christoph</u>
+Sarvan Amel
+Kern Philip
+end header
+
+actor ClientA
+database Server
+actor ClientB
+
+ClientA -> Server : Connects
+ClientB -> Server : Connects
+
+ClientA <- Server : Sends success /\nfailure message
+ClientB <- Server : Sends success /\nfailure message
+
+loop 
+ClientA -> Server : Sends Input
+note over ClientB : Both Players can\nsend their input
+Server -> Server : Calculates\nMovement
+ClientA <- Server : Updates Position
+ClientB <- Server : Updates Position
+end loop
+
+ClientA -> Server : Disconnects
+ClientB -> Server : Disconnects
+@enduml
