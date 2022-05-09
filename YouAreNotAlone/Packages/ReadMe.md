@@ -1,3 +1,3 @@
-# Assets
+# Packages
 
-### All assets used in this unity project are stored here.
+### All packages used in this unity project are stored here.
