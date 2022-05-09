@@ -24,7 +24,7 @@ ClientB <- Server : Sends success /\nfailure message
 
 loop 
 ClientA -> Server : Sends Input
-note over ClientB : Both Players can\nsend their input
+note over ClientB : Both Clients can\nsend their input
 Server -> Server : Calculates\nMovement
 ClientA <- Server : Updates Position
 ClientB <- Server : Updates Position
