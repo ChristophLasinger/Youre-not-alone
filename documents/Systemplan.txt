@@ -1,6 +1,8 @@
 @startuml
+!theme mars
+
 title 
-Technickplan 
+Technikplan 
 end title
 
 header
