@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   id: 1
-  itemName: GoldenKey
+  itemName: Key
   value: 0
   icon: {fileID: 21300000, guid: 3691eccc1b87a9f42a152a5a885a4214, type: 3}

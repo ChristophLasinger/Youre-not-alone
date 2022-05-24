@@ -18,7 +18,6 @@ public class ItemPickup : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.R) && Physics.Raycast(transform.position, transform.forward, out hit, 5) && hit.transform.GetComponent<Rigidbody>())
         //{
         //    Pickup();
-        //    Debug.Log("test");
         //}
 
         if (Input.GetKeyDown(KeyCode.R))
