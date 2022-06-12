@@ -135,6 +135,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 406578191986371237, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 92.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595671052006183716, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 92.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525005379928463507, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 92.39
+      objectReference: {fileID: 0}
     - target: {fileID: 4588134050817059032, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
       propertyPath: m_Name
       value: Labirinth
@@ -182,6 +194,42 @@ PrefabInstance:
     - target: {fileID: 4588134050817059033, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886830486430827793, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Size.y
+      value: 4.410607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886830486430827793, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.7053034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886830486430827793, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050446008854463091, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Size.y
+      value: 4.0557942
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050446008854463091, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.5278971
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050446008854463091, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616855752535194612, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5525973
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616855752535194612, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.2762986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616855752535194612, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1add66dd65754fd4b872bfaa7b1f2fee, type: 3}
