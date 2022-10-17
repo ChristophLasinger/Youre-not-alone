@@ -1,0 +1,3 @@
+Spieler A hat "numberpad" vor sich während Spieler B verschiedene Mathematikgleichungen vor sich sieht
+
+hinter jeden Gleichung ist ein anderes Muster (1. Gleichung = Reihe, 2. Gleichung = Ergebnis ist Fakultät der Summe mehrerer Zahlen, etc.) 
