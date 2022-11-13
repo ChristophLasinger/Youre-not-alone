@@ -10,6 +10,8 @@ public class FirstPersonController : NetworkBehaviour
     /// Move the player charactercontroller based on horizontal and vertical axis input
     /// </summary>
 
+    private Animator animator;
+
     float yVelocity = 0f;
     [Range(5f,25f)]
     public float gravity = 15f;
@@ -35,6 +37,7 @@ public class FirstPersonController : NetworkBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         cameraTransform = GetComponentInChildren<Camera>().transform;
         if (IsLocalPlayer)
         {
@@ -92,6 +95,7 @@ public class FirstPersonController : NetworkBehaviour
         yVelocity -= gravity * Time.deltaTime;
         move.y = yVelocity;
         //and finally move
+        animator.SetFloat("Speed", input.magnitude);
         cc.Move(move * Time.deltaTime);
     }
 
