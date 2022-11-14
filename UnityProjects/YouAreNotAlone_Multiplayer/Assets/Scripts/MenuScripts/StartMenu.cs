@@ -6,16 +6,11 @@ using MLAPI;
 
 public class StartMenu : MonoBehaviour
 {
-    public void Host()
+    public void Play()
     {
-        NetworkManager.Singleton.StartHost();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    public void Join()
-    {
-        NetworkManager.Singleton.StartClient();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+
     public void Quit()
     {
         Application.Quit();
