@@ -53,6 +53,8 @@ public class PlayerActions : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+
             if (Input.GetKeyDown(KeyCode.R))
             {
                 if(equipItem != null && _equippedItem == null && canEquip)

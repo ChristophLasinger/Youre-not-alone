@@ -8,6 +8,7 @@ public class Keyplate : MonoBehaviour
     //GameObject door;
     //PuzzleDoor puzzleDoor;
 
+    public Keyplate keyplate;
     public bool IsPressed = false;
     public bool triggered = false;
 
@@ -21,7 +22,10 @@ public class Keyplate : MonoBehaviour
     void Update()
     {
         if (triggered)
+        {
             IsPressed = true;
+            keyplate.GetComponent<Renderer>().material.color = Color.red;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
