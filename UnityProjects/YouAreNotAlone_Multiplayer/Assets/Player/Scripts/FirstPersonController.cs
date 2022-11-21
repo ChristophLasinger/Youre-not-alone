@@ -16,7 +16,7 @@ public class FirstPersonController : NetworkBehaviour
     [Range(5f,25f)]
     public float gravity = 15f;
     //the speed of the player movement
-    [Range(5f,15f)]
+    [Range(5f,50f)]
     public float movementSpeed = 10f;
     //jump speed
     [Range(5f,15f)]

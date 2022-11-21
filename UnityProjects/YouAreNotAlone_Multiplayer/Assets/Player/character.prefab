@@ -926,8 +926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 15
-  movementSpeed: 10
-  jumpSpeed: 10
+  movementSpeed: 35
+  jumpSpeed: 7
   maxPitch: 85
   minPitch: -85
   mouseSensitivity: 2
