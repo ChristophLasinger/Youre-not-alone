@@ -37,7 +37,6 @@ public class FirstPersonController : NetworkBehaviour
 
     private void Start()
     {
-        
         cameraTransform = GetComponentInChildren<Camera>().transform;
         if (IsLocalPlayer)
         {
@@ -76,10 +75,10 @@ public class FirstPersonController : NetworkBehaviour
 
     void Move()
     {
-        //update speed based onn the input
+        //update speed based on the input
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         input = Vector3.ClampMagnitude(input, 1f);
-        //transofrm it based off the player transform and scale it by movement speed
+        //transform it based off the player transform and scale it by movement speed
         Vector3 move = transform.TransformVector(input) * movementSpeed;
         //is it on the ground
         if (cc.isGrounded)
