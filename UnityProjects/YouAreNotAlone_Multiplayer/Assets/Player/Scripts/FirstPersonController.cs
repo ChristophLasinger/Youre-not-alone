@@ -10,7 +10,7 @@ public class FirstPersonController : NetworkBehaviour
     /// Move the player charactercontroller based on horizontal and vertical axis input
     /// </summary>
 
-    
+    public GameObject character;
 
     float yVelocity = 0f;
     [Range(5f,25f)]
@@ -38,6 +38,7 @@ public class FirstPersonController : NetworkBehaviour
     private void Start()
     {
         cameraTransform = GetComponentInChildren<Camera>().transform;
+
         if (IsLocalPlayer)
         {
             cc = GetComponent<CharacterController>();
@@ -45,6 +46,17 @@ public class FirstPersonController : NetworkBehaviour
         else
         {
             cameraTransform.gameObject.SetActive(false);
+        }
+
+        if (IsHost)
+        {
+            // player 1 should spawn in front of the labyrinth
+            character.transform.position = new Vector3(-4, 0.5f, 32);
+        }
+        else
+        {
+            // player 2 should spawn in front of the labyrinth
+            character.transform.position = new Vector3(82, 0.5f, 32);
         }
     }
 
@@ -97,7 +109,4 @@ public class FirstPersonController : NetworkBehaviour
         
         cc.Move(move * Time.deltaTime);
     }
-
-
-
 }
