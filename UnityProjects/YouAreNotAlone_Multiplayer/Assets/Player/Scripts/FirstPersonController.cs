@@ -51,12 +51,12 @@ public class FirstPersonController : NetworkBehaviour
         if (IsHost)
         {
             // player 1 should spawn in front of the labyrinth
-            character.transform.position = new Vector3(-4, 0.5f, 32);
+            character.transform.position = new Vector3(-4, 0, 32);
         }
         else
         {
             // player 2 should spawn in front of the labyrinth
-            character.transform.position = new Vector3(82, 0.5f, 32);
+            character.transform.position = new Vector3(82, 0, 32);
         }
     }
 
@@ -81,6 +81,7 @@ public class FirstPersonController : NetworkBehaviour
         pitch -= yInput;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         //create the local rotation value for the camera and set it
+        //temporarily changed from Quaternion rot = Quaternion.Euler(pitch, 0, 0); to fix camera/player model rotation
         Quaternion rot = Quaternion.Euler(pitch, 90, 0);
         cameraTransform.localRotation = rot;
     }
