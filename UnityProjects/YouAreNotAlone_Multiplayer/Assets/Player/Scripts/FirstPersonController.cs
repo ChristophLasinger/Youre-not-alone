@@ -81,7 +81,7 @@ public class FirstPersonController : NetworkBehaviour
         pitch -= yInput;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         //create the local rotation value for the camera and set it
-        Quaternion rot = Quaternion.Euler(pitch, 0, 0);
+        Quaternion rot = Quaternion.Euler(pitch, 90, 0);
         cameraTransform.localRotation = rot;
     }
 
@@ -89,6 +89,7 @@ public class FirstPersonController : NetworkBehaviour
     {
         //update speed based on the input
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
         input = Vector3.ClampMagnitude(input, 1f);
         //transform it based off the player transform and scale it by movement speed
         Vector3 move = transform.TransformVector(input) * movementSpeed;
