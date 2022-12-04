@@ -13,14 +13,17 @@ public class FirstPersonController : NetworkBehaviour
     public GameObject character;
 
     float yVelocity = 0f;
+
     [Range(5f,25f)]
     public float gravity = 15f;
-    //the speed of the player movement
+
     [Range(5f,50f)]
     public float movementSpeed = 10f;
-    //jump speed
+
     [Range(5f,15f)]
     public float jumpSpeed = 10f;
+
+    public float sprintSpeedMultiplier = 2f;
 
     //now the camera so we can move it up and down
     Transform cameraTransform;
@@ -91,12 +94,20 @@ public class FirstPersonController : NetworkBehaviour
 
     void Move()
     {
+        float speed = movementSpeed;
+
         //update speed based on the input
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         input = Vector3.ClampMagnitude(input, 1f);
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            speed = movementSpeed * sprintSpeedMultiplier;
+        }
+
         //transform it based off the player transform and scale it by movement speed
-        Vector3 move = transform.TransformVector(input) * movementSpeed;
+        Vector3 move = transform.TransformVector(input) * speed;
         //is it on the ground
         if (cc.isGrounded)
         {
