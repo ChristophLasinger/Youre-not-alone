@@ -85,7 +85,7 @@ public class FirstPersonController : NetworkBehaviour
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         //create the local rotation value for the camera and set it
         //temporarily changed from Quaternion rot = Quaternion.Euler(pitch, 0, 0); to fix camera/player model rotation
-        Quaternion rot = Quaternion.Euler(pitch, 90, 0);
+        Quaternion rot = Quaternion.Euler(pitch, 0, 0);
         cameraTransform.localRotation = rot;
     }
 
