@@ -39,6 +39,9 @@ public class FirstPersonController : NetworkBehaviour
     {
         cameraTransform = GetComponentInChildren<Camera>().transform;
 
+        // sync player character rotation to camera rotation
+        // character.transform.forward = cameraTransform.forward; 
+
         if (IsLocalPlayer)
         {
             cc = GetComponent<CharacterController>();
