@@ -45,7 +45,7 @@ public class PlayerActions : NetworkBehaviour
         rigidbody.useGravity = false;
         _equippedItem.transform.position = rightHandSlot.position;
         _equippedItem.transform.SetParent(rightHandSlot);
-        Debug.Log("Client has quipped an item!");
+        Debug.Log("Client has equipped an item!");
     }
 
     // Update is called once per frame
