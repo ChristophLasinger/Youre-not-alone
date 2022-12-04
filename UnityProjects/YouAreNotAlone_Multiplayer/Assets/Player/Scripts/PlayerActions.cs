@@ -51,23 +51,23 @@ public class PlayerActions : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsLocalPlayer)
+        if (IsLocalPlayer)
         {
             Cursor.lockState = CursorLockMode.Locked;
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if(equipItem != null && _equippedItem == null && canEquip)
+                if (equipItem != null && _equippedItem == null && canEquip)
                     EquipServerRpc(NetworkManager.Singleton.LocalClientId);
             }
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Attempting to pickup an Item!");
                 TryPickup();
             }
-            if(Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("Dropping Item!");
+                Debug.Log("Attempting to drop Item!");
                 Drop();
             }
         }
@@ -75,7 +75,14 @@ public class PlayerActions : NetworkBehaviour
 
     private void Drop()
     {
-        DropServerRpc();
+        if(_equippedItem != null)
+        {
+            DropServerRpc();
+        }
+        else
+        {
+            Debug.Log("Drop failed!");
+        }
     }
 
     [ServerRpc]
@@ -93,6 +100,7 @@ public class PlayerActions : NetworkBehaviour
         rigidbody.useGravity = true;
         _equippedItem.transform.SetParent(null);
         _equippedItem = null;
+        canEquip = false;
         Debug.Log("An item was dropped!");
     }
 
@@ -107,10 +115,10 @@ public class PlayerActions : NetworkBehaviour
     private void TryPickup()
     {
         RaycastHit hit;
-        if(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 5))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 5))
         {
             Debug.Log(hit.transform.name);
-            if(hit.transform.GetComponent<Item>() != null)
+            if (hit.transform.GetComponent<Item>() != null)
             {
                 canEquip = true;
                 PickupServerRpc(hit.transform.GetComponent<NetworkObject>().NetworkObjectId);
