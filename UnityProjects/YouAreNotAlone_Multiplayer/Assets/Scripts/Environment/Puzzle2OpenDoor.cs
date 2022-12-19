@@ -17,6 +17,7 @@ public class Puzzle2OpenDoor : MonoBehaviour
     void Start()
     {
         int random = Random.Range(0, questions.Length);
+        
     }
 
     // Update is called once per frame
@@ -28,9 +29,16 @@ public class Puzzle2OpenDoor : MonoBehaviour
         {
             if(keyplate.triggered)
             {
+                int oldRandom = random;
                 question.text = questions[random].text;
                 answer.text = answers[random].text;
+                Debug.Log(random + 1);
                 random = Random.Range(0, 3);
+                while (oldRandom == random)
+                {
+                    random = Random.Range(0, 3);
+                }
+                keyplate.triggered = false;
             }
         }
     }
