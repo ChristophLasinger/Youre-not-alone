@@ -16,7 +16,11 @@ public class Puzzle2OpenDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int random = Random.Range(0, questions.Length);
+        random = Random.Range(0, questions.Length);
+        while(random == 0)
+        {
+            random = Random.Range(0, questions.Length);
+        }
         
     }
 
@@ -33,10 +37,10 @@ public class Puzzle2OpenDoor : MonoBehaviour
                 question.text = questions[random].text;
                 answer.text = answers[random].text;
                 Debug.Log(random + 1);
-                random = Random.Range(0, 3);
+                random = Random.Range(0, questions.Length);
                 while (oldRandom == random)
                 {
-                    random = Random.Range(0, 3);
+                    random = Random.Range(0, questions.Length);
                 }
                 keyplate.triggered = false;
             }
