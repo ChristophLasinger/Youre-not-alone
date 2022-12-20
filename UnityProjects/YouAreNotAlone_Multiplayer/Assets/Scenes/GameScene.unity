@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7496,7 +7496,7 @@ GameObject:
   - component: {fileID: 964128024}
   - component: {fileID: 964128023}
   - component: {fileID: 964128022}
-  - component: {fileID: 964128021}
+  - component: {fileID: 964128025}
   m_Layer: 0
   m_Name: MapRedWall (1)
   m_TagString: Untagged
@@ -7519,21 +7519,6 @@ Transform:
   m_Father: {fileID: 1927270893}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &964128021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964128019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86141f1f4e9fd146b8993a856e5d5f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key1: {fileID: 1637757582}
-  key2: {fileID: 62988168}
-  key3: {fileID: 2102960489}
 --- !u!65 &964128022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7597,6 +7582,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964128019}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &964128025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964128019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63733f44da5341e4ba51d0a9dd27d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctKeyplate: {fileID: 1923821365}
+  incorrectKeyplate:
+  - {fileID: 1013874872}
+  - {fileID: 807632648}
+  - {fileID: 1036209884}
+  door: {fileID: 964128019}
+  question: {fileID: 501917897}
+  answer: {fileID: 1121569968}
+  questions:
+  - {fileID: 712681467}
+  - {fileID: 366429787}
+  - {fileID: 730116305}
+  answers:
+  - {fileID: 910886078}
+  - {fileID: 2118747357}
+  - {fileID: 1438192174}
 --- !u!1 &974556115
 GameObject:
   m_ObjectHideFlags: 0
@@ -8923,7 +8936,7 @@ GameObject:
   - component: {fileID: 1167719898}
   - component: {fileID: 1167719897}
   - component: {fileID: 1167719896}
-  - component: {fileID: 1167719895}
+  - component: {fileID: 1167719899}
   m_Layer: 0
   m_Name: MapRedWall (4)
   m_TagString: Untagged
@@ -8946,21 +8959,6 @@ Transform:
   m_Father: {fileID: 275177817}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1167719895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167719893}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86141f1f4e9fd146b8993a856e5d5f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key1: {fileID: 1637757582}
-  key2: {fileID: 62988168}
-  key3: {fileID: 2102960489}
 --- !u!65 &1167719896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9024,6 +9022,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167719893}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1167719899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167719893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63733f44da5341e4ba51d0a9dd27d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctKeyplate: {fileID: 1923821365}
+  incorrectKeyplate:
+  - {fileID: 1013874872}
+  - {fileID: 807632648}
+  - {fileID: 1036209884}
+  door: {fileID: 1167719893}
+  question: {fileID: 501917897}
+  answer: {fileID: 1121569968}
+  questions:
+  - {fileID: 712681467}
+  - {fileID: 366429787}
+  - {fileID: 730116305}
+  answers:
+  - {fileID: 910886078}
+  - {fileID: 2118747357}
+  - {fileID: 1438192174}
 --- !u!1001 &1177974453
 PrefabInstance:
   m_ObjectHideFlags: 0
