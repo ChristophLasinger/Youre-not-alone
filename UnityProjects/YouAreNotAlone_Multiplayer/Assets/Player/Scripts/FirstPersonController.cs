@@ -57,12 +57,13 @@ public class FirstPersonController : NetworkBehaviour
         if (IsHost)
         {
             // player 1 should spawn in front of the labyrinth
-            character.transform.position = new Vector3(-4, 0, 32);
+            // y = 2, to ensure player doesnt fall through floor
+            character.transform.position = new Vector3(-4, 2, 32);
         }
         else
         {
             // player 2 should spawn in front of the labyrinth
-            character.transform.position = new Vector3(82, 0, 32);
+            character.transform.position = new Vector3(82, 2, 32);
         }
     }
 
