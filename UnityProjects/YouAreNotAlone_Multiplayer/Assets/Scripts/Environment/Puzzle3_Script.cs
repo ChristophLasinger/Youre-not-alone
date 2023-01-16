@@ -43,7 +43,7 @@ public class Puzzle3_Script : MonoBehaviour
                     float gap = gapThickness / 2;
                     Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
                     Vector2[] uv = new Vector2[4];
-                    //0/1...1/1...0/0...1/0
+
                     uv[0] = new Vector2((width * col) + gap, 1 - (width * (row + 1)) -gap);
                     uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
                     uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
@@ -114,6 +114,8 @@ public class Puzzle3_Script : MonoBehaviour
                 return false;
             }
         }
+        Debug.Log("Puzzle Complete");
+        //Destroy door...
         return true;
     }
     private IEnumerator WaitShuffle(float duration)
@@ -128,12 +130,9 @@ public class Puzzle3_Script : MonoBehaviour
         int last = 0;
         while (count < (size * size * size))
         {
-            // Pick a random location.
             int rnd = Random.Range(0, size * size);
-            // Only thing we forbid is undoing the last move.
             if (rnd == last) { continue; }
             last = emptyLocation;
-            // Try surrounding spaces looking for valid move.
             if (SwapIfValid(rnd, -size, size))
             {
                 count++;
@@ -157,11 +156,8 @@ public class Puzzle3_Script : MonoBehaviour
     {
         if (((i % size) != colCheck) && ((i + offset) == emptyLocation))
         {
-            // Swap them in game state.
             (pieces[i], pieces[i + offset]) = (pieces[i + offset], pieces[i]);
-            // Swap their transforms.
             (pieces[i].localPosition, pieces[i + offset].localPosition) = ((pieces[i + offset].localPosition, pieces[i].localPosition));
-            // Update empty location.
             emptyLocation = i;
             return true;
         }
