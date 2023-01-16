@@ -8,10 +8,10 @@ public class Puzzle3_Script : MonoBehaviour
     private Transform gameTransform;
     [SerializeField]
     private Transform piecePrefab;
-    public Keyplate keyplateUp;
-    public Keyplate keyplateDown;
-    public Keyplate keyplateLeft;
-    public Keyplate keyplateRight;
+    public Puzzle3_Keyplate keyplateUp;
+    public Puzzle3_Keyplate keyplateDown;
+    public Puzzle3_Keyplate keyplateLeft;
+    public Puzzle3_Keyplate keyplateRight;
 
     private List<Transform> pieces;
     private int emptyLocation;
@@ -63,6 +63,30 @@ public class Puzzle3_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //swap
+        if(keyplateUp.triggered && size <= emptyLocation)
+        {
+            Swap(emptyLocation - size);
+        }
+        else if(keyplateDown.triggered && emptyLocation <= (size * size - size))
+        {
+            Swap(emptyLocation + size);
+        }
+        else if(keyplateLeft.triggered && emptyLocation % size != 0)
+        {
+            Swap(emptyLocation - 1);
+        }
+        else if(keyplateRight.triggered && emptyLocation % size != size - 1)
+        {
+            Swap(emptyLocation + 1);
+        }
+    }
+    private void Swap(int piece)
+    {
+        Debug.Log(piece);
+        Debug.Log(emptyLocation);
+        (pieces[emptyLocation], pieces[piece]) = (pieces[piece], pieces[emptyLocation]);
+        (pieces[emptyLocation].localPosition, pieces[piece].localPosition) = (pieces[piece].localPosition, pieces[emptyLocation].localPosition);
+        emptyLocation = piece;
+        Debug.Log("swapped");
     }
 }
