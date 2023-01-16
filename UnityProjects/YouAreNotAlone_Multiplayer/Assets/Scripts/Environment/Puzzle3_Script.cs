@@ -16,6 +16,7 @@ public class Puzzle3_Script : MonoBehaviour
     private List<Transform> pieces;
     private int emptyLocation;
     private int size;
+    private bool shuffling = false;
 
     private void CreateGamePieces(float gapThickness)
     {
@@ -58,6 +59,8 @@ public class Puzzle3_Script : MonoBehaviour
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
+        shuffling = true;
+        StartCoroutine(WaitShuffle(0.5f));
     }
 
     // Update is called once per frame
@@ -66,18 +69,22 @@ public class Puzzle3_Script : MonoBehaviour
         if(keyplateUp.triggered && size <= emptyLocation)
         {
             Swap(emptyLocation - size);
+            CheckCompletion();
         }
         else if(keyplateDown.triggered && emptyLocation <= (size * size - size))
         {
             Swap(emptyLocation + size);
+            CheckCompletion();
         }
         else if(keyplateLeft.triggered && emptyLocation % size != 0)
         {
             Swap(emptyLocation - 1);
+            CheckCompletion();
         }
         else if(keyplateRight.triggered && emptyLocation % size != size - 1)
         {
             Swap(emptyLocation + 1);
+            CheckCompletion();
         }
     }
     private void Swap(int piece)
@@ -88,5 +95,38 @@ public class Puzzle3_Script : MonoBehaviour
         (pieces[emptyLocation].localPosition, pieces[piece].localPosition) = (pieces[piece].localPosition, pieces[emptyLocation].localPosition);
         emptyLocation = piece;
         Debug.Log("swapped");
+    }
+    private bool CheckCompletion()
+    {
+        for (int i = 0; i < pieces.Count; i++)
+        {
+            if (pieces[i].name != $"{i}")
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    private IEnumerator WaitShuffle(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Shuffle();
+        shuffling= false;
+    }
+    private void Shuffle()
+    {
+        int count = 0;
+        int last = 0;
+        while(count < (size * size * size))
+        {
+            int rnd = Random.Range(0, size * size);
+
+            if(rnd == last)
+            {
+                continue;
+            }
+            Swap(rnd);
+            count++;
+        }
     }
 }
