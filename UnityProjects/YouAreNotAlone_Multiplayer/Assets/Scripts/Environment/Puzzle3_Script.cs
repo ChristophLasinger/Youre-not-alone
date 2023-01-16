@@ -17,6 +17,7 @@ public class Puzzle3_Script : MonoBehaviour
     private int emptyLocation;
     private int size;
     private bool shuffling = false;
+    private string lastDirection;
 
     private void CreateGamePieces(float gapThickness)
     {
@@ -66,25 +67,33 @@ public class Puzzle3_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(keyplateUp.triggered && size <= emptyLocation)
+        if(keyplateUp.triggered && size <= emptyLocation && lastDirection != "up")
         {
             Swap(emptyLocation - size);
+            lastDirection = "up";
             CheckCompletion();
         }
-        else if(keyplateDown.triggered && emptyLocation <= (size * size - size))
+        else if(keyplateDown.triggered && emptyLocation <= (size * size - size) && lastDirection != "down")
         {
             Swap(emptyLocation + size);
+            lastDirection = "down";
             CheckCompletion();
         }
-        else if(keyplateLeft.triggered && emptyLocation % size != 0)
+        else if(keyplateLeft.triggered && emptyLocation % size != 0 && lastDirection != "left")
         {
             Swap(emptyLocation - 1);
+            lastDirection = "left";
             CheckCompletion();
         }
-        else if(keyplateRight.triggered && emptyLocation % size != size - 1)
+        else if(keyplateRight.triggered && emptyLocation % size != size - 1 && lastDirection != "right")
         {
             Swap(emptyLocation + 1);
+            lastDirection = "right";
             CheckCompletion();
+        }
+        if(!keyplateUp.triggered && !keyplateDown.triggered && !keyplateLeft.triggered && !keyplateRight.triggered)
+        {
+            lastDirection = "";
         }
     }
     private void Swap(int piece)
@@ -117,16 +126,45 @@ public class Puzzle3_Script : MonoBehaviour
     {
         int count = 0;
         int last = 0;
-        while(count < (size * size * size))
+        while (count < (size * size * size))
         {
+            // Pick a random location.
             int rnd = Random.Range(0, size * size);
-
-            if(rnd == last)
+            // Only thing we forbid is undoing the last move.
+            if (rnd == last) { continue; }
+            last = emptyLocation;
+            // Try surrounding spaces looking for valid move.
+            if (SwapIfValid(rnd, -size, size))
             {
-                continue;
+                count++;
             }
-            Swap(rnd);
-            count++;
+            else if (SwapIfValid(rnd, +size, size))
+            {
+                count++;
+            }
+            else if (SwapIfValid(rnd, -1, 0))
+            {
+                count++;
+            }
+            else if (SwapIfValid(rnd, +1, size - 1))
+            {
+                count++;
+            }
         }
+    }
+
+    private bool SwapIfValid(int i, int offset, int colCheck)
+    {
+        if (((i % size) != colCheck) && ((i + offset) == emptyLocation))
+        {
+            // Swap them in game state.
+            (pieces[i], pieces[i + offset]) = (pieces[i + offset], pieces[i]);
+            // Swap their transforms.
+            (pieces[i].localPosition, pieces[i + offset].localPosition) = ((pieces[i + offset].localPosition, pieces[i].localPosition));
+            // Update empty location.
+            emptyLocation = i;
+            return true;
+        }
+        return false;
     }
 }
