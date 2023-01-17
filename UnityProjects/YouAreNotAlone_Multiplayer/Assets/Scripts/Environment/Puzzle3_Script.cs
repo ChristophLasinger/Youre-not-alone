@@ -12,11 +12,11 @@ public class Puzzle3_Script : MonoBehaviour
     public Puzzle3_Keyplate keyplateDown;
     public Puzzle3_Keyplate keyplateLeft;
     public Puzzle3_Keyplate keyplateRight;
+    public GameObject door;
 
     private List<Transform> pieces;
     private int emptyLocation;
     private int size;
-    private bool shuffling = false;
     private string lastDirection;
 
     private void CreateGamePieces(float gapThickness)
@@ -60,7 +60,6 @@ public class Puzzle3_Script : MonoBehaviour
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
-        shuffling = true;
         StartCoroutine(WaitShuffle(0.5f));
     }
 
@@ -115,14 +114,13 @@ public class Puzzle3_Script : MonoBehaviour
             }
         }
         Debug.Log("Puzzle Complete");
-        //Destroy door...
+        Destroy(door);
         return true;
     }
     private IEnumerator WaitShuffle(float duration)
     {
         yield return new WaitForSeconds(duration);
         Shuffle();
-        shuffling= false;
     }
     private void Shuffle()
     {
