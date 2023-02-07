@@ -10,6 +10,7 @@ public class Puzzle4_Script : MonoBehaviour
     public Puzzle4_Keyplate matchingLetterB;
     public Puzzle4_Keyplate letterC;
     public Puzzle4_Keyplate matchingLetterC;
+    public GameObject door;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class Puzzle4_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(letterA.IsPressed || matchingLetterA.IsPressed)
+        if(letterA.IsPressed && matchingLetterA.IsPressed)
         {
             Debug.Log("Letter A Complete");
         }
@@ -33,6 +34,7 @@ public class Puzzle4_Script : MonoBehaviour
         }
         if(letterA.IsPressed && letterB.IsPressed && letterC.IsPressed && matchingLetterA.IsPressed && matchingLetterB.IsPressed && matchingLetterC.IsPressed)
         {
+            Destroy(door);
             Debug.Log("Puzzle Complete");
         }
     }

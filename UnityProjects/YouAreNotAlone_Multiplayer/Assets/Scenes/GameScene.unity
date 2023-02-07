@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16652,6 +16652,7 @@ MonoBehaviour:
   matchingLetterB: {fileID: 1807632296}
   letterC: {fileID: 1344814160}
   matchingLetterC: {fileID: 1912295762}
+  door: {fileID: 789039131}
 --- !u!4 &937007923
 Transform:
   m_ObjectHideFlags: 0
