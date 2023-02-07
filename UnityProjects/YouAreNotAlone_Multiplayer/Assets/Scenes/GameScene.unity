@@ -14117,7 +14117,6 @@ GameObject:
   - component: {fileID: 789039136}
   - component: {fileID: 789039135}
   - component: {fileID: 789039134}
-  - component: {fileID: 789039133}
   m_Layer: 0
   m_Name: GlyphRoomRedWall
   m_TagString: Untagged
@@ -14140,21 +14139,6 @@ Transform:
   m_Father: {fileID: 1260426027}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &789039133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789039131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86141f1f4e9fd146b8993a856e5d5f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key1: {fileID: 1637757582}
-  key2: {fileID: 62988168}
-  key3: {fileID: 2102960489}
 --- !u!65 &789039134
 BoxCollider:
   m_ObjectHideFlags: 0
