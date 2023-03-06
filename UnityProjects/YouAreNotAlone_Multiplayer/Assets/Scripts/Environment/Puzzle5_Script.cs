@@ -38,13 +38,13 @@ public class Puzzle5_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (correctKeyplatesB[platesDoneB].isTriggered == true)
+        if (platesDoneB <= 9 && correctKeyplatesB[platesDoneB].isTriggered == true)
         {
-            platesDoneB++;
-            if(platesDoneB == 10)
+            if (platesDoneB == 9)
             {
-                Destroy(door);
+                partBcomplete = true;
             }
+            platesDoneB++;
             Debug.Log($"plates Done: {platesDoneB}");
             if (platesDoneB == 1)
             {
@@ -77,13 +77,13 @@ public class Puzzle5_Script : MonoBehaviour
         }
 
 
-        if (correctKeyplatesA[platesDoneA].isTriggered == true)
+        if (platesDoneA <= 9 && correctKeyplatesA[platesDoneA].isTriggered == true)
         {
-            platesDoneA++;
-            if (platesDoneA == 10)
+            if(platesDoneA == 9)
             {
-                Destroy(door);
+                partAcomplete = true;
             }
+            platesDoneA++;
             Debug.Log($"plates Done: {platesDoneA}");
             if (platesDoneA == 1)
             {
@@ -113,6 +113,10 @@ public class Puzzle5_Script : MonoBehaviour
                 Debug.Log("trigger plates in order! ... reseting");
                 ResetPuzzle();
             }
+        }
+        if(partAcomplete && partBcomplete)
+        {
+            Destroy(door);
         }
     }
     private void ResetPuzzle()
